@@ -32,6 +32,8 @@ class SignInActivity : AppCompatActivity() {
         SignUp()
         GetData()
 
+        Log.d("songhyeon","hello")
+
 
 
         //저기 있는 클릭이벤트를 실행해주는거 아 ㅋㅋㅋㅋㅋㅋㅋ 저게 이거구나.. 아...바본가.....
