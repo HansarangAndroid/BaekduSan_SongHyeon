@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="UserInfoActivity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/me"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/user_info_fragment"/>
+        android:layout_height="200dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="10dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/user_info_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="140dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="@id/me"
+            app:layout_constraintStart_toStartOf="@id/me"
+            app:layout_constraintBottom_toTopOf="@id/textView2"
+            app:layout_constraintTop_toTopOf="@id/me"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="300dp"
+            android:text="songhyun101"
+            app:layout_constraintBottom_toTopOf="@id/user_id"
+            app:layout_constraintEnd_toEndOf="@+id/me"
+            app:layout_constraintStart_toStartOf="@id/me"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <TextView
+            android:id="@+id/user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="songhyun101"
+            android:textSize="30sp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="200dp"
+            app:layout_constraintBottom_toTopOf="@id/slang"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/me"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/slang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개발하는 기획자"
+            app:layout_constraintBottom_toBottomOf="@+id/me"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/me"
+            app:layout_constraintTop_toBottomOf="@+id/user_id"
+            android:layout_marginEnd="280dp"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="130dp"
+            android:text="MORE"
+            app:layout_constraintEnd_toEndOf="@id/me"
+            app:layout_constraintBottom_toBottomOf="@id/me"
+            app:layout_constraintStart_toStartOf="@id/me"
+            app:layout_constraintTop_toTopOf="@id/me" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/user_info_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/me" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 <!--그레이들가서 fragmentcontainer 관련 버전 코드 추가하기-->
-<!--프래그먼트를 띄울공간!-->
+<!-- manifest에 이게 첫번쨰로 뜨는걸로 되어있음-->
+<!--id가 user_info_fragment인 프래그먼트를 띄울공간!-->

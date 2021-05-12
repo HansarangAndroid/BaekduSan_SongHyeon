@@ -6,36 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Following_Fragment" >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#F38585"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="팔로잉화면"
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/user_list"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:listitem="@layout/item_follower_user" />
+   <!--toools?
+   개발자들이 사용하는 속성
+   layout 속성에 넣고싶은 layout id를 써주면 그 뷰가 나타난다
+   저 아이템은 실제로 item_follower_user 뷰임-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+<!-- LayoutManager?
+item들의 배치 규칙 관리
+linearLayoutManger() 선형으로 아이템 보여주기
+GridLayoutManger() 갤러치, 바둑판으로 아이템 보여주기 -->
