@@ -1,5 +1,6 @@
 package com.example.second_semina_alone
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,7 +36,10 @@ class UserInfoActivity : AppCompatActivity() {
         transaction.commit()
 
         //more버튼 클릭 시
+        //home으로 이동
         binding.button.setOnClickListener(){
+            val Intent = Intent(this,HomeActivity::class.java)
+            startActivity(Intent)
 
         }
     }
