@@ -25,6 +25,7 @@
                 tools:listitem="@layout/item_follower_user"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 android:layout_marginTop="2dp"
+                app:spanCount="5"
                 />
 
         </ScrollView>
