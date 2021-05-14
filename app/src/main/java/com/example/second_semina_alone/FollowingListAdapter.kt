@@ -1,9 +1,14 @@
 package com.example.second_semina_alone
 
+import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.second_semina_alone.databinding.ItemFollowerUserBinding
+
 
 
 class FollowingListAdapter : RecyclerView.Adapter<FollowingListAdapter.FollowingUserViewHolder>(){
@@ -17,6 +22,8 @@ class FollowingListAdapter : RecyclerView.Adapter<FollowingListAdapter.Following
                 false
         )
         return FollowingUserViewHolder(binding)
+
+
     }
 
     override fun onBindViewHolder(holder: FollowingUserViewHolder, position: Int) {
@@ -30,8 +37,13 @@ class FollowingListAdapter : RecyclerView.Adapter<FollowingListAdapter.Following
     ) : RecyclerView.ViewHolder(binding.root){
         fun onBind(followingUserInfo: FollowingUserInfo){
             binding.followUserName.text = followingUserInfo.userName
+            binding.followUserImage.setImageResource(followingUserInfo.userImage)
+
+
         }
     }
+
+
 
 
 }

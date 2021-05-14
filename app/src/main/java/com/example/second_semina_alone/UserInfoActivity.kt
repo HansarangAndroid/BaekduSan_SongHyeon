@@ -6,8 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.second_semina_alone.databinding.ActivityUserInfoBinding
 import com.example.second_semina_alone.databinding.FragmentFollowingBinding
+
+
 
 class UserInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserInfoBinding
@@ -19,6 +23,10 @@ class UserInfoActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.user_info_fragment,followingFragment)
         transaction.commit()
+
+
+
+
     }
 
 
