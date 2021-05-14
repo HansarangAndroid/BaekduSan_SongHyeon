@@ -13,6 +13,10 @@
   -자식 레이아웃인 RecyclerView는 아이템의 개수가 다르기 떄문에 `layout_width="wrap_content"`, `layout_height="0dp"`
   
   
+https://user-images.githubusercontent.com/81518783/118222363-7aace500-b4ba-11eb-98c0-c939b960b549.mp4
+
+- maxLine과 ellipsize, sp를 통해 item의 사이즈를 조절했다.
+- 
 
 ## 개선할 점
 1. 구분선 추가
@@ -26,6 +30,13 @@
 Context에 대한 구글링을 해보았지만 잘 모르갰다. 다른 사례들을 보면 보통 mainActivity에 저 코드를 추가하는데
 나는 Fragment Activity라서 다른 것 같다. 차이를 모르겠다. 물어보거나 다시 공부를 해야한다
 
+2. System UI error
+<img src="https://user-images.githubusercontent.com/81518783/118222016-bc895b80-b4b9-11eb-9a38-7f668f12baa4.png" width="400" height="600">
+다른 사람 코드보면서 다시 xml코드를 짜봐야겠다. 처음에 bulid 5초 후에 에러알림이 뜬다
 
+
+
+
+<img src="https://user-images.githubusercontent.com/81518783/118221678-13426580-b4b9-11eb-9271-b150e10ebad5.png" width="400" height="600">
 
 
