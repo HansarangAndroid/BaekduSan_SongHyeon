@@ -54,7 +54,7 @@ private fun hasUserAuthData() = CherishUserAuthStorage.getUserId(this).isNotEmpt
 https://user-images.githubusercontent.com/81518783/122750414-6f26b800-d2c9-11eb-829f-1b072cd78e7b.mp4
 
 
-#### HomeActivity에서 로그아웃 버튼을 눌렀을 때 CherishUserStorage에서 저장된 ID,PWD를 지우고 SignActivity로 이동하게 했습니다
+#### HomeActivity에서 로그아웃 버튼을 눌렀을 때 CherishUserStorage에서 저장된 ID,PWD를 지우고 SigninActivity로 이동하게 했습니다
 <pre><code>
  private fun OnClickLogout(){
         binding.logoutBtn.setOnClickListener{
