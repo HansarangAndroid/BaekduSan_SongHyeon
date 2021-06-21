@@ -143,7 +143,16 @@ class SignInActivity : AppCompatActivity() {
     // CherishUserAuthStorage에서 id, pw가 있는지 찾는다
     private fun hasUserAuthData() = CherishUserAuthStorage.getUserId(this).isNotEmpty() &&
             CherishUserAuthStorage.getUserPw(this).isNotEmpty()
-    // isNotEmpty와 isNotBlank의 차이점이 무엇일까?
+    /* isNotEmpty와 isNotBlank의 차이점이 무엇일까?
+    isEmpty : 아무 값도 포함하고 있지 않을 떄 -> true 리턴
+     isNotEmpty : 어떤한 값을 포함하고 있을 때(공백포함) true 리턴
+
+     isBlank : 공백만 가지고 있거나, empty일 경우 -> true 리턴
+     itNotBlank : empty 상황이 아니고, 값에 공백만 있지 않을 때 -> true
+     아무값도 없거나 공백만 있을 떄 -> false
+
+    */
+
 
 
 
