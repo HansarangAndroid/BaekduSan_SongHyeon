@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.firstseminar.SharedPrference.CherishUserAuthStorage
 import com.example.firstseminar.api.ServiceCreater
 import com.example.firstseminar.databinding.ActivitySigninBinding
 import com.example.firstseminar.request.RequsetLoginData
@@ -34,6 +35,8 @@ class SignInActivity : AppCompatActivity() {
 
         SignUp()
         initButtonClickEvent()
+        serchUserAuthStroage()
+
 
 
 
@@ -77,8 +80,19 @@ class SignInActivity : AppCompatActivity() {
                             intent = Intent(this@SignInActivity,HomeActivity::class.java)
                             startActivity(intent)
 
+                            if(!hasUserAuthData()) {
+                                Log.d("!hasUserAuthData()","아이디 비번 없을시 ")
+
+                                with(binding){
+                                    CherishUserAuthStorage.saveUserId(this@SignInActivity,inputId.text.toString())
+                                    CherishUserAuthStorage.saveUserPw(this@SignInActivity,inputPwd.text.toString())
+                                }
+                            }
+
+
+
                         }else{
-                            Log.d("서버통신","실패")
+                            Log.d("서버통신-로그인","실패")
 
 
 
@@ -99,6 +113,37 @@ class SignInActivity : AppCompatActivity() {
 
 
     }
+
+    //이전에 작성한 id/pw를 확인한다
+    private fun serchUserAuthStroage(){
+        if(hasUserAuthData()) //AuthStorage가 데이터로 차있을 경우
+        {
+            //저장된 id/pw로 로그인을 한다
+                //입력할 필요없이 자동 로그인이 된다
+
+            val requsetLoginData = RequsetLoginData(
+                email = binding.inputId.text.toString(),
+                password = binding.inputPwd.text.toString()
+            )
+
+            ServiceCreater.soptService.postLogin(requsetLoginData)
+            Log.d("자동 로그인","성공")
+            Toast.makeText(this@SignInActivity,"자동로그인 성공",Toast.LENGTH_SHORT)
+                .show()
+            intent = Intent(this@SignInActivity,HomeActivity::class.java)
+            startActivity(intent)
+
+        }
+
+
+        }
+
+
+    // login 성공 시 id,pw 저장을 위해
+    // CherishUserAuthStorage에서 id, pw가 있는지 찾는다
+    private fun hasUserAuthData() = CherishUserAuthStorage.getUserId(this).isNotEmpty() &&
+            CherishUserAuthStorage.getUserPw(this).isNotEmpty()
+    // isNotEmpty와 isNotBlank의 차이점이 무엇일까?
 
 
 
